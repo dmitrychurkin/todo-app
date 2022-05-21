@@ -57,6 +57,7 @@ const Todos = () => {
         sx={{
           display: "grid",
           justifyContent: "center",
+          alignItems: 'flex-start',
           maxWidth: 1200,
           my: 2,
           gridTemplateColumns,
