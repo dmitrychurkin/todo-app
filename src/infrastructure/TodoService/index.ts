@@ -25,7 +25,7 @@ const useTodo = () => {
 
   const getTodos = useCallback(
     () => (user ? getUserTodos(user.uid) : getAllTodos()),
-    [user, user?.uid]
+    [user]
   );
 
   const upsertTodo = useCallback(
@@ -47,7 +47,7 @@ const useTodo = () => {
             ]
       );
     },
-    [getTodos, user, user?.uid]
+    [getTodos, user]
   );
 
   const deleteTodo = useCallback(

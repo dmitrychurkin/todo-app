@@ -42,7 +42,6 @@ const SignupForm: FC<Props> = (props) => {
         label="Email Address"
         name="email"
         autoComplete="email"
-        autoFocus
         error={formik.touched.email && Boolean(formik.errors.email)}
         helperText={formik.touched.email && formik.errors.email}
         value={formik.values.email}
