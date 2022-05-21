@@ -1,6 +1,11 @@
-# Getting Started with Create React App
+# Getting Started with ToDo App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Available live on [https://bet99-todo-app.web.app](https://bet99-todo-app.web.app)
+
+## Routes
+- /       => home
+- /login  => login
+- /signup => signup
 
 ## Available Scripts
 

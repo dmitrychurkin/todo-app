@@ -49,6 +49,8 @@ const Todos = () => {
     forceRender({});
   };
 
+  const todos = getTodos();
+
   return (
     <>
       <Box
@@ -64,8 +66,8 @@ const Todos = () => {
         }}
         gap={2}
       >
-        {getTodos().length > 0 ? (
-          getTodos().map((todo) => (
+        {todos.length > 0 ? (
+          todos.map((todo) => (
             <TodoCard
               {...todo}
               key={todo.id}
