@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter } from 'react-router-dom';
+import { initializeApp } from "firebase/app";
+import AppRouter from 'infrastructure/Router';
+import Theme from 'providers/Theme';
+import Session from 'providers/Session';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
+import firebaseConfig from 'config/auth';
+import Layout from 'providers/Layout';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+initializeApp(firebaseConfig);
+
+const App = () => (
+  <BrowserRouter>
+    <Layout>
+      <Theme>
+        <LocalizationProvider dateAdapter={AdapterMoment}>
+          <Session>
+            <AppRouter />
+          </Session>
+        </LocalizationProvider>
+      </Theme>
+    </Layout>
+  </BrowserRouter>
+);
 
 export default App;
