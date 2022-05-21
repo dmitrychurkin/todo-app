@@ -1,7 +1,7 @@
-export const storageEngine = 'localStorage';
+export const storageEngine = "localStorage";
 
-export const storageKey = 'tasks';
+export const storageKey = "tasks";
 
-export const themeStorageKey = 't';
+export const themeStorageKey = "t";
 
-export const layoutStorageKey = 'l';
+export const layoutStorageKey = "l";

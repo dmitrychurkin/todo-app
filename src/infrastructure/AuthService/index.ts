@@ -1,29 +1,27 @@
 import {
-    getAuth,
-    signOut,
-    signInWithEmailAndPassword,
-    createUserWithEmailAndPassword,
-    signInWithRedirect,
-    GoogleAuthProvider,
-    linkWithRedirect
-} from "firebase/auth";
+  createUserWithEmailAndPassword,
+  getAuth,
+  GoogleAuthProvider,
+  linkWithRedirect,
+  signInWithEmailAndPassword,
+  signInWithRedirect,
+  signOut,
+} from 'firebase/auth';
 
 const googleProvider = new GoogleAuthProvider();
 
 export type UserCredentials = {
-    readonly email: string;
-    readonly password: string;
+  readonly email: string;
+  readonly password: string;
 };
 
 export const createUserWithEmail = ({ email, password }: UserCredentials) =>
-    createUserWithEmailAndPassword(getAuth(), email, password);
+  createUserWithEmailAndPassword(getAuth(), email, password);
 
 export const signInWithEmail = ({ email, password }: UserCredentials) =>
-    signInWithEmailAndPassword(getAuth(), email, password);
+  signInWithEmailAndPassword(getAuth(), email, password);
 
 export const signInWithGoogle = () =>
-    signInWithRedirect(getAuth(), googleProvider);
+  signInWithRedirect(getAuth(), googleProvider);
 
-export const logout = () =>
-    signOut(getAuth());
-
+export const logout = () => signOut(getAuth());

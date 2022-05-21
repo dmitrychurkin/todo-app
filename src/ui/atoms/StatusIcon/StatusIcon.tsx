@@ -1,20 +1,19 @@
-import type { FC } from 'react';
-import { memo } from "react";
-
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import LoopIcon from '@mui/icons-material/Loop';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import { Status } from 'domain/Todo';
+import { memo } from 'react';
 
-import { Status } from "domain/Todo";
+import type { FC } from "react";
 
 type Props = {
-    readonly status: Status
+  readonly status: Status;
 };
 
 const IconMappingStrategy = new Map()
-    .set(Status.Todo, <FormatListBulletedIcon color='primary' />)
-    .set(Status.InProgress, <LoopIcon color='warning' />)
-    .set(Status.Done, <CheckCircleOutlineIcon color='success' />);
+  .set(Status.Todo, <FormatListBulletedIcon color="primary" />)
+  .set(Status.InProgress, <LoopIcon color="warning" />)
+  .set(Status.Done, <CheckCircleOutlineIcon color="success" />);
 
 const StatusIcon: FC<Props> = ({ status }) => IconMappingStrategy.get(status);
 

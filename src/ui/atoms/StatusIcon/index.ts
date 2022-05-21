@@ -1,1 +1,1 @@
-export { default } from './StatusIcon';
+export { default } from "./StatusIcon";
