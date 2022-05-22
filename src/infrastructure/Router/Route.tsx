@@ -71,7 +71,12 @@ const Route: FC<Props> = ({
   loginPath = Routes.Login,
 }) => {
   if (isPrivate) {
-    return <PrivateRoute children={element} loginPath={loginPath} />;
+    return (
+      <PrivateRoute
+        children={element}
+        loginPath={loginPath}
+      />
+    );
   }
 
   if (shouldRedirectIfAuthenticated) {

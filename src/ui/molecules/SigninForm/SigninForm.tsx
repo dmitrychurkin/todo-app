@@ -11,7 +11,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import useFormValidation from './useFormValidation';
 
 import type { FormikConfig } from "formik";
-import type { FC } from "react";
+import type { FC, PropsWithChildren } from "react";
 import type { UserCredentials } from "infrastructure/AuthService";
 
 export const getInitialValues = () => ({
@@ -19,9 +19,9 @@ export const getInitialValues = () => ({
   password: "",
 });
 
-type Props = FormikConfig<UserCredentials>;
+type Props = PropsWithChildren<FormikConfig<UserCredentials>>;
 
-const SigninForm: FC<Props> = (props) => {
+const SigninForm: FC<Props> = ({ children, ...props }) => {
   const formik = useFormik({
     validationSchema: useFormValidation(),
     isInitialValid: false,
@@ -78,6 +78,7 @@ const SigninForm: FC<Props> = (props) => {
           </Link>
         </Grid>
       </Grid>
+      {children}
     </Box>
   );
 };

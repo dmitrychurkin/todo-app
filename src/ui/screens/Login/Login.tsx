@@ -35,15 +35,16 @@ const Login = () => {
         <SigninForm
           initialValues={getInitialValues()}
           onSubmit={handleEmailLogin}
-        />
-        <Button
-          fullWidth
-          variant="contained"
-          sx={{ mt: 3, mb: 2 }}
-          onClick={handleGoogleLogin}
         >
-          <GoogleIcon />
-        </Button>
+          <Button
+            fullWidth
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
+            onClick={handleGoogleLogin}
+          >
+            <GoogleIcon />
+          </Button>
+        </SigninForm>
       </Auth>
       <Notification
         open={Boolean(message)}
