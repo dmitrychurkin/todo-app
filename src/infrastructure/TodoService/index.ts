@@ -33,7 +33,9 @@ const useTodo = () => {
       // const todos: Array<Todo> = getTodos().map((todo) =>
       //   todo.id === newOrUpdateTodo.id ? newOrUpdateTodo : todo
       // );
-      const todos: Array<Todo> = getAllTodos();
+      const todos: Array<Todo> = getAllTodos().map((todo) =>
+        todo.id === newOrUpdateTodo.id ? newOrUpdateTodo : todo
+      );
 
       setAllTodos(
         newOrUpdateTodo.id
