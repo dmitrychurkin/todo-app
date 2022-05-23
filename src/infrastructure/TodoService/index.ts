@@ -30,9 +30,10 @@ const useTodo = () => {
 
   const upsertTodo = useCallback(
     (newOrUpdateTodo: Todo) => {
-      const todos: Array<Todo> = getTodos().map((todo) =>
-        todo.id === newOrUpdateTodo.id ? newOrUpdateTodo : todo
-      );
+      // const todos: Array<Todo> = getTodos().map((todo) =>
+      //   todo.id === newOrUpdateTodo.id ? newOrUpdateTodo : todo
+      // );
+      const todos: Array<Todo> = getAllTodos();
 
       setAllTodos(
         newOrUpdateTodo.id
@@ -47,7 +48,7 @@ const useTodo = () => {
             ]
       );
     },
-    [getTodos, user]
+    [user]
   );
 
   const deleteTodo = useCallback(
